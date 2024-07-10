@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
         <a class="link__about" href="http://127.0.0.1:5555/about">About</a>
         <br>
         <h1>Добро пожаловать на главную страницу!</h1>
-        <p>Кол-во переходов на эту страницу: ${counterHome.getCounterValue()}</p>`)
+        <p>Кол-во переходов на эту страницу: ${counterHome.getCounterValue()}</p>`);
     } else if (req.url === '/about') {
         counterAbout.increaseCounter();
         res.writeHead(200, { 'Content-Type': 'text/html; charset=UTF-8' });
@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
         <a class="link__about" href="http://127.0.0.1:5555/about">About</a>
         <br>
         <h1>Добро пожаловать на страницу About!</h1>
-        <p>Кол-во переходов на эту страницу: ${counterAbout.getCounterValue()}</p>`)
+        <p>Кол-во переходов на эту страницу: ${counterAbout.getCounterValue()}</p>`);
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
         res.end('<h1>Не найдена такая страница!</h1>');
@@ -48,5 +48,5 @@ const server = http.createServer((req, res) => {
 const port = 5555;
 server.listen(port, () => {
     console.log(`Сервер запущен на порте ${port}`);
-})
+});
 
